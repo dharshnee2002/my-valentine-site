@@ -1,0 +1,59 @@
+<section class="letter-section">
+
+    <!-- Envelope -->
+    <div class="envelope" (click)="openLetter()">
+
+        <!-- Flap -->
+        <div class="flap"></div>
+
+        <!-- Body Content -->
+        <div class="envelope-body">
+            <div class="heart">❤️</div>
+            <p>Open My Letter 💌</p>
+        </div>
+
+    </div>
+
+
+
+    <!-- POPUP LETTER -->
+
+    <div class="letter-popup" *ngIf="showPopup">
+
+        <!-- Overlay -->
+        <div class="overlay" (click)="closeLetter()"></div>
+
+        <!-- Falling Petals -->
+        <div class="petals">
+            <span *ngFor="let p of petalsArray"></span>
+        </div>
+
+        <!-- Letter Content -->
+        <div class="popup-content" (click)="closeLetter()">
+
+            <div class="stamp">I ❤️ YOU</div>
+
+            <h2>To My Ptnr 💖</h2>
+
+            <p>
+                From the moment you came into my life,<br>
+                everything started feeling magical ✨
+            </p>
+
+            <p>
+                Your smile became my favorite sight,<br>
+                your voice my favorite comfort 💙
+            </p>
+
+            <p>
+                Thank you for loving me endlessly…<br>
+                You are my today, tomorrow and forever ❤️
+            </p>
+
+            <h3>Love You Thanga Pattani 💌</h3>
+
+        </div>
+
+    </div>
+
+</section>

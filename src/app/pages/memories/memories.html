@@ -1,0 +1,33 @@
+<div class="memories-page">
+
+  <h1 class="title">📸 Our Beautiful Memories</h1>
+
+  <!-- Rope 1 -->
+
+  <div class="rope rope-1">
+
+```
+<div class="photo" *ngFor="let memory of memories1">
+  <div class="clip"></div>
+  <img [src]="memory.image" alt="memory">
+  <p>{{ memory.caption }}</p>
+</div>
+```
+
+  </div>
+
+  <!-- Rope 2 -->
+
+  <div class="rope rope-2">
+
+```
+<div class="photo" *ngFor="let memory of memories2">
+  <div class="clip"></div>
+  <img [src]="memory.image" alt="memory">
+  <p>{{ memory.caption }}</p>
+</div>
+```
+
+  </div>
+
+</div>

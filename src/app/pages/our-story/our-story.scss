@@ -1,0 +1,149 @@
+.timeline-section {
+  padding: 12px;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #fef6fb
+  );
+  text-align: center;
+}
+
+/* Title */
+
+.title {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #7a2d5c;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Timeline Base */
+
+.timeline {
+  position: relative;
+  margin: 0;
+}
+
+/* Center Line */
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(
+    #6ecbff,
+    #ff6fa5
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Items */
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: calc(45%);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s ease;
+}
+
+/* Scroll animation active */
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left / Right */
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 48%;
+  text-align: left;
+}
+
+/* Card */
+
+.content {
+  background: linear-gradient(
+    135deg,
+    #cfefff,
+    #ffd6e8
+  );
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Date badge */
+
+.date-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  background: white;
+  color: #7a2d5c;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* Images */
+
+.content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Heart dot */
+
+.timeline-item::after {
+  content: "❤️";
+  position: absolute;
+  top: 40px;
+  right: -14px;
+  font-size: 18px;
+}
+
+.timeline-item.right::after {
+  left: -14px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 768px) {
+
+  .timeline::after {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: calc(90%);
+    padding-left: 30px;
+    padding-right: 10px;
+    text-align: left;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::after {
+    left: -2px;
+    display: none;
+  }
+
+}

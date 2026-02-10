@@ -1,0 +1,49 @@
+<section class="surprise-page">
+
+  <!-- ================= QUESTION ================= -->
+
+  <div *ngIf="!showFinalMessage" class="question-box">
+
+    <h1>Will You Be Only Mine Forever? 💍</h1>
+
+    <!-- YES Button -->
+    <div class="buttons">
+      <button class="yes-btn" (click)="selectYes()">
+        Yes 💙
+      </button>
+    </div>
+
+    <!-- NO Button -->
+    <button
+      *ngIf="!forceYes"
+      class="no-btn"
+      (mouseenter)="moveNoButton()"   
+      (click)="moveNoButton()"        
+      [style.top]="noTop + 'vh'"
+      [style.left]="noLeft + 'vw'"
+    >
+      No 😜
+    </button>
+
+    <!-- Force YES text -->
+    <p *ngIf="forceYes" class="force-text">
+      You only have YES now 😌
+    </p>
+
+  </div>
+
+
+  <!-- ================= FINAL LOVE MESSAGE ================= -->
+
+  <div *ngIf="showFinalMessage" class="final-box">
+
+    <!-- Heart Burst Animation -->
+    <div class="hearts">
+      <span *ngFor="let h of [].constructor(30)"></span>
+    </div>
+
+    <h1>I Love You Moreeee 💖</h1>
+
+  </div>
+
+</section>

@@ -1,0 +1,171 @@
+/* ================= PAGE ================= */
+
+.surprise-page {
+  height: calc(100vh - 59px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#cfefff,#ffd6e8);
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= QUESTION ================= */
+
+.question-box h1 {
+  font-size: 2.6rem;
+  color: #ff4d8d;
+  margin-bottom: 50px;
+}
+
+/* YES button */
+
+.yes-btn {
+  padding: 14px 32px;
+  font-size: 18px;
+  background: #4da6ff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform .25s ease;
+}
+
+.yes-btn:hover {
+  transform: scale(1.12);
+}
+
+/* ================= NO BUTTON ================= */
+
+.no-btn {
+  position: fixed;
+  padding: 14px 28px;
+  font-size: 18px;
+  background: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: all .3s ease;
+  z-index: 1000;
+}
+
+/* Force text */
+
+.force-text {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #ff4d8d;
+}
+
+/* ================= FINAL MESSAGE ================= */
+
+.final-box {
+  position: relative;
+}
+
+.final-box h1 {
+  font-size: 3.2rem;
+  color: #ff4d8d;
+  animation: pop 1s ease forwards;
+}
+
+/* Pop animation */
+
+@keyframes pop {
+  0% {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ================= HEART BURST ================= */
+
+.hearts span {
+  position: absolute;
+  bottom: 0;
+  width: 22px;
+  height: 22px;
+  background: url('/assets/images/heart.png') no-repeat center/cover;
+  animation: burst 2.5s linear infinite;
+}
+
+.hearts span:nth-child(odd) {
+  left: 30%;
+  animation-duration: 2.5s;
+}
+
+.hearts span:nth-child(even) {
+  left: 70%;
+  animation-duration: 3s;
+}
+
+@keyframes burst {
+  0% {
+    transform: translateY(0) scale(.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .question-box h1 {
+    font-size: 1.8rem;
+    padding: 0 20px;
+    line-height: 1.4;
+  }
+
+  .yes-btn,
+  .no-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .force-text {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .final-box h1 {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+
+  .hearts span {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .question-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .yes-btn,
+  .no-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .final-box h1 {
+    font-size: 1.8rem;
+  }
+
+}

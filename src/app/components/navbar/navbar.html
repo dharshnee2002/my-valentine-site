@@ -1,0 +1,54 @@
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="logo">
+    💙💖 Our Love Story
+  </div>
+
+  <!-- Desktop Nav -->
+  <ul class="nav-links desktop">
+
+    <li (click)="navigateToSection('home')">Home ❤️</li>
+    <li (click)="navigateToSection('our-story')">Our Story ⏳</li>
+    <!-- <li (click)="navigateToSection('memories')">Memories 📸</li> -->
+    <li (click)="navigateToSection('love-letter')">Love Letter 💌</li>
+    <li (click)="navigateToSection('surprise')">Surprise 🎁</li>
+
+  </ul>
+
+  <!-- Hamburger (Mobile) -->
+  <div
+    class="hamburger"
+    [class.active]="isMenuOpen"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<!-- Overlay -->
+<div
+  class="overlay"
+  *ngIf="isMenuOpen"
+  (click)="closeMenu()"
+></div>
+
+<!-- Side Drawer -->
+<div class="side-drawer" [class.open]="isMenuOpen">
+
+  <h2>Quick Links</h2>
+
+  <ul>
+
+    <li (click)="navigateToSection('home')">Home ❤️</li>
+    <li (click)="navigateToSection('our-story')">Our Story ⏳</li>
+    <!-- <li (click)="navigateToSection('memories')">Memories 📸</li> -->
+    <li (click)="navigateToSection('love-letter')">Love Letter 💌</li>
+    <li (click)="navigateToSection('surprise')">Surprise 🎁</li>
+
+  </ul>
+
+</div>

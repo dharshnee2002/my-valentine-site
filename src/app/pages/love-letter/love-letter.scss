@@ -1,0 +1,179 @@
+/* Import SAME cursive font as footer */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+
+.letter-section {
+  height: calc(100vh - 59px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#cfefff,#ffd6e8);
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ================= ENVELOPE ================= */
+
+.envelope {
+  position: relative;
+  width: 260px;
+  height: 170px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+/* Envelope Body */
+
+.envelope-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#ffb6d9,#ff8fc2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Heart */
+
+.envelope-body .heart {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.envelope-body p {
+  font-size: 18px;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ================= FLAP ================= */
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#ff8fc2,#ff6fae); /* darker shade */
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 2;
+  pointer-events: none; /* allow click through */
+}
+
+/* ================= POPUP ================= */
+
+.letter-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Overlay */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Letter box */
+
+.popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn .6s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Stamp */
+
+.stamp {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: 2px dashed #ff4d8d;
+  padding: 6px 12px;
+  color: #ff4d8d;
+  font-weight: bold;
+  transform: rotate(20deg);
+  font-size: 13px;
+}
+
+/* Text styling */
+
+.popup-content h2 {
+  color: #ff4d8d;
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  font-size: 18px;
+  margin: 12px 0;
+  color: #444;
+}
+
+.popup-content h3 {
+  margin-top: 20px;
+  color: #ff4d8d;
+}
+
+/* Fade animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(.8) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ================= PETALS ================= */
+
+.petals span {
+  position: absolute;
+  top: -50px;
+  width: 22px;
+  height: 22px;
+  background: url('/assets/images/rose.png') no-repeat center/cover;
+  animation: fall linear infinite;
+  opacity: .9;
+}
+
+.petals span:nth-child(odd) {
+  left: 30%;
+  animation-duration: 9s;
+}
+
+.petals span:nth-child(even) {
+  left: 70%;
+  animation-duration: 11s;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-50px) rotate(0);
+  }
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
